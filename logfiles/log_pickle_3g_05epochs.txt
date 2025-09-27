@@ -1,0 +1,142 @@
+10:00:23   Random seed: 1024
+10:00:23   Config file: config/transductive/inference.yaml
+10:00:23   {'checkpoint': '/content/ULTRA/ckpts/ultra_3g.pth',
+ 'dataset': {'class': 'PICKLE', 'root': '~/git/ULTRA/kg-datasets/'},
+ 'model': {'class': 'Ultra',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'EntityNBFNet',
+                            'hidden_dims': [64, 64, 64, 64, 64, 64],
+                            'input_dim': 64,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'RelNBFNet',
+                              'hidden_dims': [64, 64, 64, 64, 64, 64],
+                              'input_dim': 64,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '~/git/ULTRA/output',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'TransductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 5}}
+10:00:23   PICKLE dataset
+10:00:23   #train: 1719, #valid: 215, #test: 215
+10:00:23   ------------------------------
+10:00:23   Number of parameters: 168705
+10:00:23   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:23   Epoch 0 begin
+10:00:24   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:24   binary cross entropy: 1.07853
+10:00:27   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:27   binary cross entropy: 0.577047
+10:00:30   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:30   binary cross entropy: 0.623311
+10:00:31   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:31   Epoch 0 end
+10:00:31   ------------------------------
+10:00:31   average binary cross entropy: 0.634312
+10:00:31   Save checkpoint to model_epoch_1.pth
+10:00:31   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:31   Evaluate on valid
+10:00:32   mr: 531.16
+10:00:32   mrr: 0.148707
+10:00:32   hits@1: 0.118605
+10:00:32   hits@3: 0.165116
+10:00:32   hits@10: 0.197674
+10:00:32   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:32   Epoch 1 begin
+10:00:34   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:34   binary cross entropy: 0.609957
+10:00:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:37   binary cross entropy: 0.57617
+10:00:38   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:38   Epoch 1 end
+10:00:38   ------------------------------
+10:00:38   average binary cross entropy: 0.619923
+10:00:38   Save checkpoint to model_epoch_2.pth
+10:00:38   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:38   Evaluate on valid
+10:00:39   mr: 511.409
+10:00:39   mrr: 0.151949
+10:00:39   hits@1: 0.123256
+10:00:39   hits@3: 0.167442
+10:00:39   hits@10: 0.197674
+10:00:39   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:39   Epoch 2 begin
+10:00:41   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:41   binary cross entropy: 0.621843
+10:00:44   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:44   binary cross entropy: 0.600723
+10:00:45   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:45   Epoch 2 end
+10:00:45   ------------------------------
+10:00:45   average binary cross entropy: 0.616265
+10:00:45   Save checkpoint to model_epoch_3.pth
+10:00:45   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:45   Evaluate on valid
+10:00:46   mr: 530.94
+10:00:46   mrr: 0.157134
+10:00:46   hits@1: 0.130233
+10:00:46   hits@3: 0.169767
+10:00:46   hits@10: 0.2
+10:00:46   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:46   Epoch 3 begin
+10:00:48   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:48   binary cross entropy: 0.629234
+10:00:51   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:51   binary cross entropy: 0.717656
+10:00:52   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:52   Epoch 3 end
+10:00:52   ------------------------------
+10:00:52   average binary cross entropy: 0.618493
+10:00:52   Save checkpoint to model_epoch_4.pth
+10:00:52   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:52   Evaluate on valid
+10:00:53   mr: 495.886
+10:00:53   mrr: 0.152731
+10:00:53   hits@1: 0.127907
+10:00:53   hits@3: 0.162791
+10:00:53   hits@10: 0.195349
+10:00:53   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:53   Epoch 4 begin
+10:00:54   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:54   binary cross entropy: 0.480753
+10:00:57   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:57   binary cross entropy: 0.596878
+10:00:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:59   Epoch 4 end
+10:00:59   ------------------------------
+10:00:59   average binary cross entropy: 0.615269
+10:00:59   Save checkpoint to model_epoch_5.pth
+10:00:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:59   Evaluate on valid
+10:01:00   mr: 510.595
+10:01:00   mrr: 0.158377
+10:01:00   hits@1: 0.130233
+10:01:00   hits@3: 0.172093
+10:01:00   hits@10: 0.2
+10:01:00   Load checkpoint from model_epoch_5.pth
+10:01:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:01:00   Evaluate on valid
+10:01:01   mr: 510.595
+10:01:01   mrr: 0.158377
+10:01:01   hits@1: 0.130233
+10:01:01   hits@3: 0.172093
+10:01:01   hits@10: 0.2
+10:01:01   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:01:01   Evaluate on test
+10:01:02   mr: 531.749
+10:01:02   mrr: 0.145636
+10:01:02   hits@1: 0.111628
+10:01:02   hits@3: 0.15814
+10:01:02   hits@10: 0.197674

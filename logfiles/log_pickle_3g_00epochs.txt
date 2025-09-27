@@ -1,0 +1,47 @@
+09:59:17   Random seed: 1024
+09:59:17   Config file: config/transductive/inference.yaml
+09:59:17   {'checkpoint': '/content/ULTRA/ckpts/ultra_3g.pth',
+ 'dataset': {'class': 'PICKLE', 'root': '~/git/ULTRA/kg-datasets/'},
+ 'model': {'class': 'Ultra',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'EntityNBFNet',
+                            'hidden_dims': [64, 64, 64, 64, 64, 64],
+                            'input_dim': 64,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'RelNBFNet',
+                              'hidden_dims': [64, 64, 64, 64, 64, 64],
+                              'input_dim': 64,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '~/git/ULTRA/output',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'TransductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+09:59:17   PICKLE dataset
+09:59:17   #train: 1719, #valid: 215, #test: 215
+09:59:17   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:17   Evaluate on valid
+09:59:18   mr: 779.793
+09:59:19   mrr: 0.102507
+09:59:19   hits@1: 0.0627907
+09:59:19   hits@3: 0.130233
+09:59:19   hits@10: 0.165116
+09:59:19   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:19   Evaluate on test
+09:59:19   mr: 762.595
+09:59:19   mrr: 0.0992746
+09:59:19   hits@1: 0.0581395
+09:59:19   hits@3: 0.134884
+09:59:19   hits@10: 0.165116

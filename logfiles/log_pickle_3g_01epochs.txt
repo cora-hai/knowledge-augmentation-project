@@ -1,0 +1,70 @@
+09:59:43   Random seed: 1024
+09:59:43   Config file: config/transductive/inference.yaml
+09:59:43   {'checkpoint': '/content/ULTRA/ckpts/ultra_3g.pth',
+ 'dataset': {'class': 'PICKLE', 'root': '~/git/ULTRA/kg-datasets/'},
+ 'model': {'class': 'Ultra',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'EntityNBFNet',
+                            'hidden_dims': [64, 64, 64, 64, 64, 64],
+                            'input_dim': 64,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'RelNBFNet',
+                              'hidden_dims': [64, 64, 64, 64, 64, 64],
+                              'input_dim': 64,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '~/git/ULTRA/output',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'TransductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 1}}
+09:59:43   PICKLE dataset
+09:59:43   #train: 1719, #valid: 215, #test: 215
+09:59:43   ------------------------------
+09:59:43   Number of parameters: 168705
+09:59:43   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:43   Epoch 0 begin
+09:59:44   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:44   binary cross entropy: 1.07853
+09:59:47   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:47   binary cross entropy: 0.577054
+09:59:50   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:50   binary cross entropy: 0.618732
+09:59:50   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:50   Epoch 0 end
+09:59:50   ------------------------------
+09:59:50   average binary cross entropy: 0.634156
+09:59:50   Save checkpoint to model_epoch_1.pth
+09:59:50   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:50   Evaluate on valid
+09:59:51   mr: 527.979
+09:59:51   mrr: 0.148345
+09:59:51   hits@1: 0.118605
+09:59:51   hits@3: 0.162791
+09:59:51   hits@10: 0.197674
+09:59:51   Load checkpoint from model_epoch_1.pth
+09:59:51   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:51   Evaluate on valid
+09:59:52   mr: 527.979
+09:59:52   mrr: 0.148345
+09:59:52   hits@1: 0.118605
+09:59:52   hits@3: 0.162791
+09:59:52   hits@10: 0.197674
+09:59:52   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:52   Evaluate on test
+09:59:53   mr: 556.163
+09:59:53   mrr: 0.142495
+09:59:53   hits@1: 0.106977
+09:59:53   hits@3: 0.162791
+09:59:53   hits@10: 0.204651
